@@ -1,0 +1,11 @@
+# Node Modules
+node_modules/
+node_modules
+
+.DS_Store
+
+# dotenv
+.env
+
+# Sequelize Config
+# config/config.json
