@@ -1,12 +1,6 @@
-# Node Modules
-node_modules/
 node_modules
-
-.DS_Store
-
-# dotenv
+dist
 .env
-
-# Sequelize Config
-# config/config.json
+.env.example
+.env.local
 .vercel

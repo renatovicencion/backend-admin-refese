@@ -23,8 +23,6 @@ export interface Token {
 	last_name: string;
 	email: string;
 	username: string;
-	region_id: string;
-	city_id: string;
 	type: string;
 }
 
@@ -39,7 +37,5 @@ export interface User {
 	type?: string;
 	phone_number?: string;
 	profile_image?: string;
-	region_id: string;
-	city_id: string;
 	createdAt: number;
 }

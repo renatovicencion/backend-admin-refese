@@ -89,7 +89,7 @@ export = {
 			{ input }: GoogleRegisterInputProps,
 			{ db }: { db: Db }
 		) => {
-			const { token, region_id, city_id } = input;
+			const { token } = input;
 
 			const decodedToken = await axios.post(
 				`https://www.googleapis.com/oauth2/v3/userinfo?access_token=${token}`
@@ -127,8 +127,6 @@ export = {
 						profile_image: picture,
 						shipping_preference: [],
 						country_id: "i8HTiJW5exfDyQnhE1hJe",
-						region_id: region_id,
-						city_id: city_id,
 					});
 				// await user.save();
 

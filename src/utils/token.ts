@@ -15,16 +15,7 @@ export const createToken = (
 	tokenType: string,
 	expiresIn: string
 ) => {
-	const {
-		_id,
-		first_name,
-		last_name,
-		email,
-		username,
-		region_id,
-		city_id,
-		type,
-	} = user;
+	const { _id, first_name, last_name, email, username, type } = user;
 	const payload = {
 		token_type: tokenType,
 		_id,
@@ -32,8 +23,6 @@ export const createToken = (
 		last_name,
 		email,
 		username,
-		region_id,
-		city_id,
 		type,
 	};
 

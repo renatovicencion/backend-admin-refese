@@ -9,7 +9,6 @@ type User {
 	type: String
 	phone_number: String
 	profile_image: String
-	shipping_preference: [String]
 	createdAt: String
 }
 
