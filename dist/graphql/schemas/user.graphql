@@ -1,0 +1,24 @@
+type User {
+	_id: ID
+	rut: String
+	first_name: String
+	last_name: String
+	username: String
+	email: String
+	password: String
+	type: String
+	phone_number: String
+	profile_image: String
+	shipping_preference: [String]
+	createdAt: String
+}
+
+type Query {
+	# Users
+	getUsers: [User]
+}
+
+# type Mutation {
+# Users
+# createUser(input: UserInput): UserResult
+#}

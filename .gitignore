@@ -9,3 +9,4 @@ node_modules
 
 # Sequelize Config
 # config/config.json
+.vercel

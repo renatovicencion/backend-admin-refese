@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import jwtDecode from "jwt-decode";
-import User from "../models/user";
+import { Db, ObjectId } from "mongodb";
+import { USER_COLLECTION } from "../mongo/collections";
 
 import {
 	Token,
@@ -39,13 +40,15 @@ export const createToken = (
 	return jwt.sign(payload, SECRET_KEY, { expiresIn });
 };
 
-export const refreshAccessToken = async ({ input }: TokenInput) => {
+export const refreshAccessToken = async ({ input }: TokenInput, db: Db) => {
 	const { token } = input;
 
 	const { _id } = jwtDecode<Token>(token);
 
 	// Comprobando si usuario existe
-	const userFound = await User.findOne({ _id: _id });
+	const userFound: any = await db
+		.collection(USER_COLLECTION)
+		.findOne({ _id: new ObjectId(_id) });
 	if (!userFound) throw new Error("Error del servidor.");
 
 	return {
